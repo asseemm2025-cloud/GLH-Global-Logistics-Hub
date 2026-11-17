@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GLH | لوحة إدارة مدخلات المنصة</title>
+<style>
+:root{--navy:#142b42;--blue:#1769aa;--teal:#159c98;--bg:#f3f6f9;--card:#fff;--line:#e1e8ef;--text:#243447;--muted:#718094;--green:#16835d;--orange:#b87518;--red:#bd4a4a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;font-size:14px}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}.layout{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:100vh}.sidebar{background:var(--navy);color:#dbe6ee;padding:22px 15px}.brand{display:flex;gap:10px;align-items:center;padding:0 8px 24px;border-bottom:1px solid #ffffff20}.logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#1769aa,#159c98);display:grid;place-items:center;color:white;font-size:23px;font-weight:bold}.brand b{font-size:18px;color:white}.brand small{display:block;font-size:9px;letter-spacing:1px;color:#a9bdcb}.side-label{font-size:10px;color:#8fa6b8;margin:22px 10px 8px}.nav{display:grid;gap:5px}.nav button{background:transparent;color:#d5e1e9;text-align:right;padding:12px;border-radius:9px;display:flex;align-items:center;gap:10px}.nav button:hover,.nav button.active{background:#ffffff18;color:white}.nav button.active{border-right:3px solid #42c4bc}.nav .ico{width:21px;text-align:center}.side-foot{margin-top:35px;border-top:1px solid #ffffff20;padding:15px 8px;color:#9fb2c0;font-size:11px;line-height:1.8}
+main{min-width:0}.topbar{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;gap:15px}.crumb{color:var(--muted);font-size:12px}.crumb b{color:var(--navy)}.admin{display:flex;align-items:center;gap:10px}.avatar{width:36px;height:36px;border-radius:50%;background:#e5f1f6;color:var(--blue);display:grid;place-items:center;font-weight:bold}.admin small{display:block;color:var(--muted);font-size:10px}.content{padding:26px;max-width:1500px;margin:auto}.page-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:20px}.page-head h1{margin:0;color:var(--navy);font-size:24px}.page-head p{margin:5px 0 0;color:var(--muted);font-size:12px}.btn{background:var(--blue);color:white;padding:10px 15px;border-radius:9px;font-weight:bold}.btn.teal{background:var(--teal)}.btn.light{background:#eaf2f8;color:var(--blue)}.btn.danger{background:#fff0f0;color:var(--red)}.btn.small{padding:7px 10px;font-size:11px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}.stat,.panel{background:var(--card);border:1px solid var(--line);border-radius:13px}.stat{padding:17px}.stat .top{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.stat strong{display:block;font-size:26px;color:var(--navy);margin-top:8px}.stat em{font-style:normal;color:var(--green);font-size:10px}.panel{padding:18px;margin-bottom:17px}.panel-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.panel-title h2{font-size:16px;margin:0;color:var(--navy)}.panel-title span{font-size:11px;color:var(--muted)}.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.quick{border:1px solid var(--line);background:#fbfdfe;border-radius:10px;text-align:right;padding:13px;color:var(--text)}.quick b{display:block;margin:6px 0 2px;color:var(--navy)}.quick small{color:var(--muted);font-size:10px}.quick .qico{font-size:20px}
+.toolbar{display:flex;gap:9px;align-items:end;flex-wrap:wrap;margin-bottom:14px}.field{min-width:160px;flex:1}.field label,.form-field label{display:block;font-size:11px;color:#617286;margin:0 0 5px}.field input,.field select,.form-field input,.form-field select,.form-field textarea{width:100%;border:1px solid #d7e1e9;border-radius:8px;padding:10px;background:white;color:var(--text);outline:none}.field input:focus,.field select:focus,.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:#7aaccb;box-shadow:0 0 0 3px #1769aa14}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:680px}th{text-align:right;background:#f7f9fb;color:#6c7d8f;font-size:10px;font-weight:700;padding:12px 10px;border-bottom:1px solid var(--line)}td{padding:12px 10px;border-bottom:1px solid #edf1f4;font-size:12px}tr:last-child td{border-bottom:0}.name{font-weight:bold;color:var(--navy)}.sub{display:block;color:var(--muted);font-size:10px;margin-top:3px}.status{display:inline-block;padding:4px 8px;border-radius:20px;font-size:10px;background:#eaf6ef;color:var(--green)}.status.pending{background:#fff5e7;color:var(--orange)}.status.inactive{background:#f0f2f5;color:#687789}.actions{display:flex;gap:5px}.actions button{background:#eef4f8;color:var(--blue);padding:6px 8px;border-radius:6px;font-size:10px}.empty{text-align:center;color:var(--muted);padding:28px}.view{display:none}.view.active{display:block}.notice{background:#fff9e9;border:1px solid #f0e2bd;color:#82601e;padding:12px;border-radius:9px;font-size:11px;line-height:1.7;margin-bottom:15px}.modal{display:none;position:fixed;inset:0;background:#0b1e31a8;z-index:5;align-items:center;justify-content:center;padding:15px}.modal.show{display:flex}.modal-box{background:white;width:min(650px,100%);max-height:90vh;overflow:auto;border-radius:14px;padding:22px}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.modal-head h2{font-size:18px;color:var(--navy);margin:0}.close{background:#edf2f6;border-radius:7px;padding:7px 10px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-field.full{grid-column:1/-1}.form-field textarea{min-height:75px;resize:vertical}.modal-actions{display:flex;gap:8px;margin-top:17px}.toast{position:fixed;bottom:18px;left:18px;background:#153b4d;color:white;padding:12px 17px;border-radius:9px;display:none;z-index:10;font-size:12px;box-shadow:0 5px 20px #0002}.toast.show{display:block}.mobile-menu{display:none}
+@media(max-width:950px){.layout{grid-template-columns:205px minmax(0,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.quick-grid{grid-template-columns:repeat(2,1fr)}.content{padding:20px}}
+@media(max-width:650px){.layout{display:block}.sidebar{padding:12px;display:none}.sidebar.open{display:block}.brand{padding-bottom:10px}.nav{grid-template-columns:repeat(2,1fr)}.side-label,.side-foot{display:none}.topbar{height:60px;padding:0 14px}.mobile-menu{display:inline-block}.content{padding:15px}.page-head{align-items:flex-start;flex-direction:column}.page-head h1{font-size:20px}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:22px}.quick-grid{gap:7px}.quick{padding:10px}.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}.admin .usertext{display:none}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+<div class="brand"><div class="logo">GLH</div><div><b>GLH Admin</b><small>CONTENT & DATA CONTROL</small></div></div>
+<div class="side-label">إدارة المنصة</div>
+<div class="nav" id="nav">
+<button class="active" data-view="dashboard"><span class="ico">▦</span> لوحة التحكم</button>
+<button data-view="services"><span class="ico">◈</span> الخدمات والتصنيفات</button>
+<button data-view="companies"><span class="ico">▣</span> الشركات ومقدمو الخدمة</button>
+<button data-view="locations"><span class="ico">⌖</span> الدول والمواقع</button>
+<button data-view="content"><span class="ico">▤</span> المحتوى والمعرفة</button>
+<button data-view="tools"><span class="ico">⌗</span> الأدوات والحاسبات</button>
+<button data-view="requests"><span class="ico">⇄</span> طلبات عروض الأسعار</button>
+<button data-view="users"><span class="ico">♙</span> المستخدمون والصلاحيات</button>
+<button data-view="settings"><span class="ico">⚙</span> إعدادات المنصة</button>
+</div>
+<div class="side-foot">نسخة معاينة تفاعلية<br>البيانات تحفظ داخل جلسة الصفحة فقط.</div>
+</aside>
+<main>
+<div class="topbar"><div><button class="btn light mobile-menu" id="menuBtn">☰</button> <span class="crumb">GLH / <b id="crumb">لوحة التحكم</b></span></div><div class="admin"><div class="usertext"><b>مدير المنصة</b><small>صلاحية مدير عام (تجريبية)</small></div><div class="avatar">م</div></div></div>
+<div class="content">
+<section class="view active" id="dashboard">
+<div class="page-head"><div><h1>لوحة إدارة مدخلات المنصة</h1><p>إدارة البيانات الأساسية والمحتوى والخدمات ومقدمي الخدمة من مكان واحد.</p></div><button class="btn teal" id="quickAdd">＋ إضافة مدخل جديد</button></div>
+<div class="notice">هذه لوحة تحكم تجريبية لتوضيح طريقة إدارة محتوى وبيانات GLH. يمكنك الإضافة والتعديل والحذف داخل المعاينة؛ لا يتم حفظ البيانات في قاعدة بيانات دائمة أو نشرها للعامة.</div>
+<div class="stats">
+<div class="stat"><div class="top"><span>الخدمات المسجلة</span><span>◈</span></div><strong id="statServices">6</strong><em>بيانات تجريبية</em></div>
+<div class="stat"><div class="top"><span>مقدمو الخدمة</span><span>▣</span></div><strong id="statCompanies">4</strong><em>ملفات تعريفية</em></div>
+<div class="stat"><div class="top"><span>المحتوى المنشور</span><span>▤</span></div><strong id="statContent">3</strong><em>مواد معرفية</em></div>
+<div class="stat"><div class="top"><span>طلبات تحتاج مراجعة</span><span>⇄</span></div><strong id="statRequests">2</strong><em>حالات تجريبية</em></div>
+</div>
+<div class="panel"><div class="panel-title"><h2>الوصول السريع للإدارات</h2><span>اختر القسم لإدارة مدخلاته</span></div><div class="quick-grid">
+<button class="quick" data-jump="services"><span class="qico">🚢</span><b>الخدمات اللوجستية</b><small>أنواع الخدمات والتصنيفات</small></button>
+<button class="quick" data-jump="companies"><span class="qico">🏢</span><b>دليل الشركات</b><small>بيانات مقدمي الخدمات</small></button>
+<button class="quick" data-jump="locations"><span class="qico">🌍</span><b>الدول والمواقع</b><small>الدول والمدن والموانئ</small></button>
+<button class="quick" data-jump="content"><span class="qico">📚</span><b>المحتوى المعرفي</b><small>مقالات وأدلة ودورات</small></button>
+<button class="quick" data-jump="tools"><span class="qico">🧮</span><b>الأدوات والحاسبات</b><small>إعدادات الأدوات الرقمية</small></button>
+<button class="quick" data-jump="requests"><span class="qico">📨</span><b>طلبات العملاء</b><small>مراجعة طلبات عروض الأسعار</small></button>
+<button class="quick" data-jump="users"><span class="qico">👥</span><b>المستخدمون</b><small>الأدوار والصلاحيات</small></button>
+<button class="quick" data-jump="settings"><span class="qico">⚙️</span><b>الإعدادات العامة</b><small>اللغات والبيانات العامة</small></button>
+</div></div>
+<div class="panel"><div class="panel-title"><h2>آخر الأنشطة</h2><span>سجل تجريبي</span></div><div class="table-wrap"><table><thead><tr><th>النشاط</th><th>القسم</th><th>المستخدم</th><th>التاريخ</th><th>الحالة</th></tr></thead><tbody><tr><td>إضافة خدمة شحن بحري</td><td>الخدمات</td><td>مدير المنصة</td><td>اليوم</td><td><span class="status">مكتمل</span></td></tr><tr><td>تحديث ملف شركة تجريبية</td><td>الشركات</td><td>مدير المنصة</td><td>أمس</td><td><span class="status">مكتمل</span></td></tr><tr><td>مراجعة طلب عرض سعر</td><td>الطلبات</td><td>مسؤول العمليات</td><td>أمس</td><td><span class="status pending">قيد المراجعة</span></td></tr></tbody></table></div></div>
+</section>
+
+<section class="view" id="services"><div class="page-head"><div><h1>الخدمات والتصنيفات</h1><p>إضافة وتحرير أنواع الخدمات التي تظهر في سوق GLH ودليل الخدمات.</p></div><button class="btn" data-add="services">＋ إضافة خدمة</button></div><div class="panel"><div class="toolbar"><div class="field"><label>بحث عن خدمة</label><input id="serviceSearch" placeholder="اسم الخدمة أو التصنيف"></div><div class="field"><label>الحالة</label><select id="serviceStatus"><option value="">كل الحالات</option><option>نشط</option><option>مسودة</option></select></div></div><div class="table-wrap"><table><thead><tr><th>الخدمة</th><th>التصنيف الرئيسي</th><th>الوصف المختصر</th><th>الحالة</th><th>الإجراءات</th></tr></thead><tbody id="servicesRows"></tbody></table></div></div></section>
+
+<section class="view" id="companies"><div class="page-head"><div><h1>الشركات ومقدمو الخدمة</h1><p>إدارة ملفات الشركات، الأنشطة، مناطق التغطية وحالة الاعتماد.</p></div><button class="btn" data-add="companies">＋ إضافة مقدم خدمة</button></div><div class="panel"><div class="toolbar"><div class="field"><label>بحث</label><input id="companySearch" placeholder="اسم الشركة"></div><div class="field"><label>نوع النشاط</label><select id="companyFilter"><option value="">كل الأنشطة</option><option>شحن</option><option>تخليص</option><option>نقل</option><option>تخزين</option></select></div></div><div class="table-wrap"><table><thead><tr><th>الشركة</th><th>النشاط</th><th>المدينة</th><th>حالة الاعتماد</th><th>الإجراءات</th></tr></thead><tbody id="companiesRows"></tbody></table></div></div></section>
+
+<section class="view" id="locations"><div class="page-head"><div><h1>الدول والمواقع اللوجستية</h1><p>إدارة الدول والمدن والموانئ والمطارات والمعابر ونطاقات التغطية.</p></div><button class="btn" data-add="locations">＋ إضافة موقع</button></div><div class="panel"><div class="notice">هيكل البيانات المقترح: الدولة ← المحافظة / المنطقة ← المدينة ← الميناء أو المطار أو المنفذ. يمكن ربط المواقع بخدمات الشركات ومسارات الشحن.</div><div class="table-wrap"><table><thead><tr><th>الموقع</th><th>الدولة</th><th>نوع الموقع</th><th>رمز / ملاحظة</th><th>الحالة</th><th>الإجراءات</th></tr></thead><tbody id="locationsRows"></tbody></table></div></div></section>
+
+<section class="view" id="content"><div class="page-head"><div><h1>المحتوى والمعرفة</h1><p>إدارة المقالات والأخبار والأدلة والدورات والمواد التعليمية.</p></div><button class="btn" data-add="content">＋ إضافة محتوى</button></div><div class="panel"><div class="toolbar"><div class="field"><label>بحث في العناوين</label><input id="contentSearch" placeholder="عنوان المقال أو الدليل"></div><div class="field"><label>نوع المحتوى</label><select id="contentFilter"><option value="">كل الأنواع</option><option>مقال</option><option>دليل</option><option>دورة</option><option>خبر</option></select></div></div><div class="table-wrap"><table><thead><tr><th>العنوان</th><th>النوع</th><th>القسم</th><th>تاريخ النشر</th><th>الحالة</th><th>الإجراءات</th></tr></thead><tbody id="contentRows"></tbody></table></div></div></section>
+
+<section class="view" id="tools"><div class="page-head"><div><h1>الأدوات والحاسبات</h1><p>تحديد الأدوات المتاحة، وصفها، وحالة إظهارها للمستخدمين.</p></div><button class="btn" data-add="tools">＋ إضافة أداة</button></div><div class="panel"><div class="table-wrap"><table><thead><tr><th>الأداة</th><th>التصنيف</th><th>المدخلات المطلوبة</th><th>الحالة</th><th>الإجراءات</th></tr></thead><tbody id="toolsRows"></tbody></table></div></div></section>
+
+<section class="view" id="requests"><div class="page-head"><div><h1>طلبات عروض الأسعار RFQ</h1><p>مراجعة الطلبات الواردة وتحويلها إلى مسار عمل تشغيلي.</p></div><button class="btn light" id="exportRequests">تصدير CSV</button></div><div class="panel"><div class="toolbar"><div class="field"><label>حالة الطلب</label><select id="requestFilter"><option value="">كل الحالات</option><option>جديد</option><option>قيد المراجعة</option><option>مكتمل</option></select></div></div><div class="table-wrap"><table><thead><tr><th>رقم الطلب</th><th>العميل</th><th>الخدمة</th><th>المسار</th><th>تاريخ الطلب</th><th>الحالة</th><th>الإجراء</th></tr></thead><tbody id="requestsRows"></tbody></table></div></div></section>
+
+<section class="view" id="users"><div class="page-head"><div><h1>المستخدمون والصلاحيات</h1><p>إدارة حسابات موظفي المنصة ومقدمي الخدمات والعملاء وأدوارهم.</p></div><button class="btn" data-add="users">＋ إضافة مستخدم</button></div><div class="panel"><div class="notice">الصلاحيات المقترحة: مدير عام، مدير محتوى، مسؤول اعتماد شركات، مسؤول طلبات، دعم فني، مقدم خدمة، عميل. يجب تطبيق مبدأ أقل صلاحية لازمة عند البرمجة.</div><div class="table-wrap"><table><thead><tr><th>المستخدم</th><th>البريد / المعرف</th><th>الدور</th><th>آخر نشاط</th><th>الحالة</th><th>الإجراءات</th></tr></thead><tbody id="usersRows"></tbody></table></div></div></section>
+
+<section class="view" id="settings"><div class="page-head"><div><h1>إعدادات المنصة</h1><p>بيانات الهوية واللغات والخيارات العامة.</p></div><button class="btn" id="saveSettings">حفظ الإعدادات التجريبية</button></div><div class="panel"><div class="form-grid"><div class="form-field"><label>اسم المنصة بالعربية</label><input value="المركز العالمي للخدمات اللوجستية"></div><div class="form-field"><label>اسم المنصة بالإنجليزية</label><input value="Global Logistics Hub"></div><div class="form-field"><label>الاسم المختصر</label><input value="GLH"></div><div class="form-field"><label>لغة الواجهة الافتراضية</label><select><option>العربية</option><option>English</option></select></div><div class="form-field"><label>الدولة الأساسية للإطلاق</label><input value="اليمن"></div><div class="form-field"><label>العملة الافتراضية</label><select><option>USD - الدولار الأمريكي</option><option>YER - الريال اليمني</option></select></div><div class="form-field full"><label>وصف المنصة</label><textarea>منصة رقمية متكاملة للخدمات اللوجستية والتجارة وسلاسل الإمداد.</textarea></div></div></div><div class="panel"><div class="panel-title"><h2>عناصر ينبغي ضبطها قبل التشغيل</h2></div><ul style="line-height:2;color:var(--muted);font-size:12px"><li>إعداد اللغات والترجمة لكل مدخل.</li><li>اعتماد دورة مراجعة ونشر للمحتوى والخدمات.</li><li>تعريف صلاحيات المستخدمين وسجل التدقيق.</li><li>تحديد الدول والمدن والمنافذ المعتمدة.</li><li>تحديد سياسة اعتماد الشركات والتحقق من وثائقها.</li></ul></div></section>
+</div></main></div>
+
+<div class="modal" id="editor"><div class="modal-box"><div class="modal-head"><h2 id="modalTitle">إضافة مدخل</h2><button class="close" id="closeModal">إغلاق ✕</button></div><form id="editForm"><div class="form-grid" id="formFields"></div><div class="modal-actions"><button class="btn" type="submit">حفظ المدخل</button><button class="btn light" type="button" id="cancelModal">إلغاء</button></div><p style="font-size:10px;color:var(--muted)">الحفظ محلي داخل هذه المعاينة فقط، ولا ينتج عنه نشر فعلي.</p></form></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const $=id=>document.getElementById(id);
+let currentType='',editingId=null;
+let data={
+services:[
+{id:1,name:'الشحن البحري',category:'الشحن الدولي',desc:'نقل البضائع عبر الحاويات والسفن',status:'نشط'},
+{id:2,name:'الشحن الجوي',category:'الشحن الدولي',desc:'نقل الشحنات جواً',status:'نشط'},
+{id:3,name:'الشحن البري',category:'النقل',desc:'النقل البري المحلي والدولي',status:'نشط'},
+{id:4,name:'التخليص الجمركي',category:'الخدمات الجمركية',desc:'إجراءات التخليص والمستندات',status:'نشط'},
+{id:5,name:'التخزين والمستودعات',category:'التخزين',desc:'مساحات تخزين وإدارة مخزون',status:'مسودة'},
+{id:6,name:'التوزيع وآخر ميل',category:'التوزيع',desc:'توزيع وتسليم الشحنات',status:'نشط'}],
+companies:[
+{id:1,name:'شركة شحن تجريبية',type:'شحن',city:'صنعاء',status:'معتمد'},
+{id:2,name:'مكتب تخليص تجريبي',type:'تخليص',city:'الحديدة',status:'قيد المراجعة'},
+{id:3,name:'شركة نقل تجريبية',type:'نقل',city:'عدن',status:'معتمد'},
+{id:4,name:'مستودعات تجريبية',type:'تخزين',city:'صنعاء',status:'غير معتمد'}],
+locations:[
+{id:1,name:'ميناء الحديدة',country:'اليمن',type:'ميناء بحري',code:'YEHOD'},
+{id:2,name:'ميناء عدن',country:'اليمن',type:'ميناء بحري',code:'YEADE'},
+{id:3,name:'مطار صنعاء الدولي',country:'اليمن',type:'مطار',code:'SAH'},
+{id:4,name:'ميناء جبل علي',country:'الإمارات',type:'ميناء بحري',code:'AEJEA'}],
+content:[
+{id:1,title:'مقدمة في الخدمات اللوجستية',type:'مقال',category:'أساسيات',date:'2026-11-10',status:'منشور'},
+{id:2,title:'دليل مستندات الاستيراد',type:'دليل',category:'التجارة الدولية',date:'2026-11-12',status:'مسودة'},
+{id:3,title:'أساسيات إدارة سلاسل الإمداد',type:'دورة',category:'الأكاديمية',date:'2026-11-14',status:'منشور'}],
+tools:[
+{id:1,name:'حاسبة CBM',category:'حسابات الشحن',inputs:'الطول، العرض، الارتفاع، العدد',status:'نشط'},
+{id:2,name:'حاسبة الوزن الحجمي',category:'حسابات الشحن',inputs:'الأبعاد، معامل التحويل',status:'قيد التطوير'},
+{id:3,name:'حاسبة تقدير تكلفة الاستيراد',category:'التكاليف',inputs:'قيمة البضاعة، الشحن، الرسوم',status:'مسودة'}],
+requests:[
+{id:1,client:'تاجر تجريبي 1',service:'شحن بحري',route:'شنغهاي ← الحديدة',date:'2026-11-15',status:'جديد'},
+{id:2,client:'شركة تجريبية 2',service:'تخليص جمركي',route:'ميناء عدن',date:'2026-11-14',status:'قيد المراجعة'}],
+users:[
+{id:1,name:'مدير النظام',email:'admin@example.test',role:'مدير عام',last:'اليوم',status:'نشط'},
+{id:2,name:'مسؤول المحتوى',email:'content@example.test',role:'مدير محتوى',last:'أمس',status:'نشط'},
+{id:3,name:'مقدم خدمة تجريبي',email:'provider@example.test',role:'مقدم خدمة',last:'قبل يومين',status:'معلق'}]
+};
+const configs={
+services:{title:'الخدمات',fields:[['name','اسم الخدمة','text'],['category','التصنيف الرئيسي','text'],['desc','الوصف المختصر','textarea'],['status','الحالة','select','نشط|مسودة']]},
+companies:{title:'مقدم خدمة',fields:[['name','اسم الشركة','text'],['type','نوع النشاط','select','شحن|تخليص|نقل|تخزين'],['city','المدينة','text'],['status','حالة الاعتماد','select','معتمد|قيد المراجعة|غير معتمد']]},
+locations:{title:'موقع',fields:[['name','اسم الموقع','text'],['country','الدولة','text'],['type','نوع الموقع','select','مدينة|ميناء بحري|مطار|منفذ بري|منطقة لوجستية'],['code','الرمز / ملاحظة','text']]},
+content:{title:'محتوى',fields:[['title','عنوان المحتوى','text'],['type','نوع المحتوى','select','مقال|دليل|دورة|خبر'],['category','القسم','text'],['date','تاريخ النشر','date'],['status','الحالة','select','مسودة|منشور']]},
+tools:{title:'أداة',fields:[['name','اسم الأداة','text'],['category','التصنيف','text'],['inputs','المدخلات المطلوبة','text'],['status','الحالة','select','نشط|قيد التطوير|مسودة']]},
+users:{title:'مستخدم',fields:[['name','اسم المستخدم','text'],['email','البريد / المعرف','email'],['role','الدور','select','مدير عام|مدير محتوى|مسؤول اعتماد شركات|مسؤول طلبات|دعم فني|مقدم خدمة|عميل'],['last','آخر نشاط','text'],['status','الحالة','select','نشط|معلق|موقوف']]}
+};
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2600)}
+function go(view){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===view));document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));$('crumb').textContent=document.querySelector(`#nav button[data-view="${view}"]`)?.textContent.trim()||'لوحة التحكم';$('sidebar').classList.remove('open');renderAll()}
+$('nav').addEventListener('click',e=>{let b=e.target.closest('button[data-view]');if(b)go(b.dataset.view)});
+document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.jump)));
+$('menuBtn').addEventListener('click',()=>$('sidebar').classList.toggle('open'));
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function badge(s){let cls=['مسودة','قيد المراجعة','قيد التطوير','جديد','معلق','غير معتمد'].includes(s)?'pending':(['موقوف','غير نشط'].includes(s)?'inactive':'');return `<span class="status ${cls}">${esc(s)}</span>`}
+function actionButtons(type,id){return `<div class="actions"><button data-edit="${type}:${id}">تعديل</button><button data-delete="${type}:${id}">حذف</button></div>`}
+function row(a,b,c,d,e){return `<tr><td>${a}</td><td>${b}</td><td>${c}</td><td>${d}</td><td>${e}</td></tr>`}
+function renderServices(){let q=($('serviceSearch')?.value||'').toLowerCase(),s=$('serviceStatus')?.value||'';$('servicesRows').innerHTML=data.services.filter(x=>(!q||(x.name+x.category).toLowerCase().includes(q))&&(!s||x.status===s)).map(x=>row(`<span class="name">${esc(x.name)}</span>`,` ${esc(x.category)}`,esc(x.desc),badge(x.status),actionButtons('services',x.id))).join('')||'<tr><td colspan="5" class="empty">لا توجد نتائج</td></tr>'}
+function renderCompanies(){let q=($('companySearch')?.value||'').toLowerCase(),f=$('companyFilter')?.value||'';$('companiesRows').innerHTML=data.companies.filter(x=>(!q||x.name.toLowerCase().includes(q))&&(!f||x.type===f)).map(x=>row(`<span class="name">${esc(x.name)}</span>`,esc(x.type),esc(x.city),badge(x.status),actionButtons('companies',x.id))).join('')||'<tr><td colspan="5" class="empty">لا توجد نتائج</td></tr>'}
+function renderLocations(){$('locationsRows').innerHTML=data.locations.map(x=>`<tr><td class="name">${esc(x.name)}</td><td>${esc(x.country)}</td><td>${esc(x.type)}</td><td>${esc(x.code)}</td><td>${badge('نشط')}</td><td>${actionButtons('locations',x.id)}</td></tr>`).join('')}
+function renderContent(){let q=($('contentSearch')?.value||'').toLowerCase(),f=$('contentFilter')?.value||'';$('contentRows').innerHTML=data.content.filter(x=>(!q||x.title.toLowerCase().includes(q))&&(!f||x.type===f)).map(x=>`<tr><td class="name">${esc(x.title)}</td><td>${esc(x.type)}</td><td>${esc(x.category)}</td><td>${esc(x.date)}</td><td>${badge(x.status)}</td><td>${actionButtons('content',x.id)}</td></tr>`).join('')||'<tr><td colspan="6" class="empty">لا توجد نتائج</td></tr>'}
+function renderTools(){$('toolsRows').innerHTML=data.tools.map(x=>`<tr><td class="name">${esc(x.name)}</td><td>${esc(x.category)}</td><td>${esc(x.inputs)}</td><td>${badge(x.status)}</td><td>${actionButtons('tools',x.id)}</td></tr>`).join('')}
+function renderRequests(){let f=$('requestFilter')?.value||'';$('requestsRows').innerHTML=data.requests.filter(x=>!f||x.status===f).map(x=>`<tr><td class="name">RFQ-${String(x.id).padStart(4,'0')}</td><td>${esc(x.client)}</td><td>${esc(x.service)}</td><td>${esc(x.route)}</td><td>${esc(x.date)}</td><td>${badge(x.status)}</td><td><button class="btn small light" data-next="${x.id}">تغيير الحالة</button></td></tr>`).join('')||'<tr><td colspan="7" class="empty">لا توجد طلبات بهذه الحالة</td></tr>'}
+function renderUsers(){$('usersRows').innerHTML=data.users.map(x=>`<tr><td class="name">${esc(x.name)}</td><td>${esc(x.email)}</td><td>${esc(x.role)}</td><td>${esc(x.last)}</td><td>${badge(x.status)}</td><td>${actionButtons('users',x.id)}</td></tr>`).join('')}
+function renderAll(){renderServices();renderCompanies();renderLocations();renderContent();renderTools();renderRequests();renderUsers();$('statServices').textContent=data.services.length;$('statCompanies').textContent=data.companies.length;$('statContent').textContent=data.content.length;$('statRequests').textContent=data.requests.filter(x=>x.status!=='مكتمل').length}
+function openEditor(type,id=null){currentType=type;editingId=id;let cfg=configs[type];if(!cfg)return;let item=id?data[type].find(x=>x.id===id):{};$('modalTitle').textContent=(id?'تعديل ':'إضافة ')+cfg.title;$('formFields').innerHTML=cfg.fields.map(([key,label,kind,opts])=>{let value=item[key]??'';let control=kind==='textarea'?`<textarea name="${key}">${esc(value)}</textarea>`:kind==='select'?`<select name="${key}">${opts.split('|').map(o=>`<option ${o===value?'selected':''}>${esc(o)}</option>`).join('')}</select>`:`<input name="${key}" type="${kind}" value="${esc(value)}" ${key==='date'?'':''}>`;return `<div class="form-field ${kind==='textarea'?'full':''}"><label>${label}</label>${control}</div>`}).join('');$('editor').classList.add('show')}
+function closeEditor(){$('editor').classList.remove('show');$('editForm').reset()}
+document.querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>openEditor(b.dataset.add)));
+$('quickAdd').addEventListener('click',()=>{let t=prompt('اختر القسم: services / companies / locations / content / tools / users');if(configs[t])openEditor(t);else toast('اكتب اسم القسم كما هو موضح في القائمة.')});
+$('closeModal').addEventListener('click',closeEditor);$('cancelModal').addEventListener('click',closeEditor);
+$('editForm').addEventListener('submit',e=>{e.preventDefault();let obj=Object.fromEntries(new FormData(e.target).entries());if(editingId){let idx=data[currentType].findIndex(x=>x.id===editingId);data[currentType][idx]={...data[currentType][idx],...obj}}else{obj.id=Math.max(0,...data[currentType].map(x=>x.id))+1;data[currentType].push(obj)}closeEditor();renderAll();toast('تم حفظ المدخل في المعاينة بنجاح.')});
+document.body.addEventListener('click',e=>{let edit=e.target.closest('[data-edit]'),del=e.target.closest('[data-delete]'),next=e.target.closest('[data-next]');if(edit){let [t,id]=edit.dataset.edit.split(':');openEditor(t,+id)}if(del){let [t,id]=del.dataset.delete.split(':');if(confirm('هل تريد حذف هذا المدخل من المعاينة؟')){data[t]=data[t].filter(x=>x.id!==+id);renderAll();toast('تم حذف المدخل تجريبياً.')}}if(next){let x=data.requests.find(r=>r.id===+next.dataset.next);x.status=x.status==='جديد'?'قيد المراجعة':x.status==='قيد المراجعة'?'مكتمل':'جديد';renderRequests();$('statRequests').textContent=data.requests.filter(r=>r.status!=='مكتمل').length;toast('تم تحديث حالة الطلب.')}});
+['serviceSearch','serviceStatus'].forEach(id=>$(id).addEventListener('input',renderServices));['companySearch','companyFilter'].forEach(id=>$(id).addEventListener('input',renderCompanies));['contentSearch','contentFilter'].forEach(id=>$(id).addEventListener('input',renderContent));$('requestFilter').addEventListener('change',renderRequests);
+$('saveSettings').addEventListener('click',()=>toast('تم حفظ الإعدادات داخل المعاينة فقط.'));
+$('exportRequests').addEventListener('click',()=>{let lines=[['ID','Client','Service','Route','Date','Status'],...data.requests.map(x=>[x.id,x.client,x.service,x.route,x.date,x.status])];let csv=lines.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');let a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}));a.download='GLH_RFQ_Requests.csv';a.click();URL.revokeObjectURL(a.href);toast('تم تجهيز ملف CSV للطلبات التجريبية.')});
+renderAll();
+</script>
+</body></html>
