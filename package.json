@@ -1,0 +1,23 @@
+{
+  "name": "glh-platform",
+  "version": "0.6.15",
+  "private": true,
+  "description": "Global Logistics Hub - Web, local PostgreSQL and Android build workflow",
+  "scripts": {
+    "dev": "npm --prefix server run dev",
+    "start": "npm --prefix server start",
+    "db:generate": "npm --prefix server run db:generate",
+    "db:push": "npm --prefix server run db:push",
+    "db:seed": "npm --prefix server run db:seed",
+    "test": "npm --prefix server test",
+    "db:validate": "npm --prefix server run db:validate",
+    "mobile:sync": "npx cap sync android",
+    "mobile:open": "npx cap open android",
+    "mobile:android": "npx cap add android"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3",
+    "@capacitor/core": "^7.4.3",
+    "@capacitor/android": "^7.4.3"
+  }
+}
