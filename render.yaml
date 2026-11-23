@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: glh-platform
+    runtime: node
+    plan: free
+    buildCommand: cd server && npm install && npx prisma generate
+    startCommand: cd server && npx prisma db push && node prisma/seed.js && node src/index.js
+    healthCheckPath: /api/ready
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: glh-postgres
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 8h
+      - key: SEED_ADMIN_PASSWORD
+        sync: false
+      - key: SEED_DEMO_DATA
+        value: "false"
+databases:
+  - name: glh-postgres
+    plan: free
+    databaseName: glh
+    user: glh_user
