@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+const root=path.basename(process.cwd())==='server'?path.resolve(process.cwd(),'..'):process.cwd();
+const schema=fs.readFileSync(path.join(root,'server/prisma/schema.prisma'),'utf8');
+const routes=fs.readFileSync(path.join(root,'server/src/routes/advanced-operations.js'),'utf8');
+const admin=fs.readFileSync(path.join(root,'web/admin-business.html'),'utf8');
+const client=fs.readFileSync(path.join(root,'web/index.html'),'utf8');
+test('donor lifecycle models and relations exist',()=>{for(const x of ['model DonorProgram','model DonorApplication','programs DonorProgram[]'])assert.ok(schema.includes(x));});
+test('manufacturer catalog and inquiry models exist',()=>{for(const x of ['model ManufacturerProduct','model ManufacturerInquiry','catalogProducts ManufacturerProduct[]'])assert.ok(schema.includes(x));});
+test('donor program and application APIs are present and protected',()=>{for(const x of ["'/admin/donor-programs'","'/donor-applications'","'/admin/donor-applications/:id/review'",'requirePermission(\'donors.manage\')'])assert.ok(routes.includes(x));});
+test('manufacturer product and RFQ APIs are present and protected',()=>{for(const x of ["'/admin/manufacturer-products'","'/manufacturer-inquiries'","'/admin/manufacturer-inquiries/:id/quote'",'requirePermission(\'manufacturers.manage\')'])assert.ok(routes.includes(x));});
+test('admin UI exposes detailed donor and manufacturer workflows',()=>{for(const x of ['donor-programs','donor-applications','manufacturer-catalog','manufacturer-inquiries'])assert.ok(admin.includes(x));});
+test('client directory includes donor opportunities and manufacturer catalog',()=>{assert.ok(client.includes("'/operations/donor-programs'"));assert.ok(client.includes("'/operations/manufacturer-products'"));});
