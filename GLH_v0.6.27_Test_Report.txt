@@ -1,0 +1,6 @@
+GLH v0.6.27 — Test Report
+
+Node built-in test suite: 84 passed, 0 failed.
+JavaScript syntax checks: server routes and permission catalog passed; inline scripts in web/admin-business.html and web/index.html passed.
+
+Not performed: Prisma CLI validation/client generation, PostgreSQL migration or live DB integration, browser/device end-to-end test, GitHub push, Render deployment.

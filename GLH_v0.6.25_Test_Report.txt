@@ -1,0 +1,18 @@
+GLH v0.6.25 – Test Report
+
+Automated test suite: 78 passed, 0 failed.
+JavaScript syntax checks: passed for server/src and web JavaScript files.
+
+New workflow contract checks:
+- Server-side product subtotal and delivery-inclusive total calculation.
+- Ecommerce report creation inside the same Prisma transaction as the order.
+- Finance application and delivery quote details linked to the report.
+- Department/date/status/currency report filters.
+- Release metadata version consistency.
+
+Limitations:
+- Tests are code-contract/unit checks, not a live end-to-end transaction against PostgreSQL.
+- PostgreSQL was not started in this execution.
+- Prisma generate/validate/db push were not executed because dependencies/database are not provisioned in this workspace.
+- No real payment, bank, external store, courier API, GPS or proof-of-delivery operation was executed.
+- This package is not deployed to GitHub or Render.

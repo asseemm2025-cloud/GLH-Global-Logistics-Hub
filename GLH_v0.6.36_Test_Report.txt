@@ -1,0 +1,18 @@
+GLH v0.6.36 — تقرير الفحص
+
+اختبارات Node.js:
+- 96 اختباراً ناجحاً.
+- 0 اختبارات فاشلة.
+- تم تشغيلها من مجلد server باستخدام: node --test test/*.test.js
+
+فحص JavaScript:
+- web/admin-business.html inline script: node --check ناجح.
+- web/admin-operations.html inline script: node --check ناجح.
+
+ما لم يتم فحصه في هذه البيئة:
+- لم يتم تثبيت dependencies داخل حزمة التسليم.
+- لم يتم تشغيل prisma validate أو prisma generate لعدم تثبيت Prisma dependencies في بيئة البناء الحالية.
+- لم يتم الاتصال بقاعدة PostgreSQL فعلية أو تنفيذ db push.
+- لم يتم اختبار المتصفح على جهاز فعلي أو نشر GitHub/Render.
+
+ينبغي تنفيذ فحوص Prisma وقاعدة البيانات بعد إعداد DATABASE_URL في بيئة اختبار قبل الإنتاج.

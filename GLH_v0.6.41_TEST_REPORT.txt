@@ -1,0 +1,608 @@
+
+> glh-api@0.6.41 test
+> node --test test/*.test.js
+
+TAP version 13
+# Subtest: access control endpoints and admin UI are present
+ok 1 - access control endpoints and admin UI are present
+  ---
+  duration_ms: 1.019912
+  type: 'test'
+  ...
+# Subtest: admin payment module can list all methods, create methods and enable or disable them
+ok 2 - admin payment module can list all methods, create methods and enable or disable them
+  ---
+  duration_ms: 2.384472
+  type: 'test'
+  ...
+# Subtest: admin donation module supports receiving and allocating pledges and changing campaign status
+ok 3 - admin donation module supports receiving and allocating pledges and changing campaign status
+  ---
+  duration_ms: 1.312213
+  type: 'test'
+  ...
+# Subtest: admin sidebar groups all newly requested departments
+ok 4 - admin sidebar groups all newly requested departments
+  ---
+  duration_ms: 0.635356
+  type: 'test'
+  ...
+# Subtest: admin navigation opens API-backed modules instead of dead legacy routes
+ok 5 - admin navigation opens API-backed modules instead of dead legacy routes
+  ---
+  duration_ms: 0.42789
+  type: 'test'
+  ...
+# Subtest: business admin honors requested section after login
+ok 6 - business admin honors requested section after login
+  ---
+  duration_ms: 0.094119
+  type: 'test'
+  ...
+# Subtest: client UI exposes merchant registration portal
+ok 7 - client UI exposes merchant registration portal
+  ---
+  duration_ms: 0.092797
+  type: 'test'
+  ...
+# Subtest: browser API bridge is shipped and exposes required methods
+ok 8 - browser API bridge is shipped and exposes required methods
+  ---
+  duration_ms: 0.688474
+  type: 'test'
+  ...
+# Subtest: Stage 5 page loads the API bridge without removing legacy UI
+ok 9 - Stage 5 page loads the API bridge without removing legacy UI
+  ---
+  duration_ms: 1.668508
+  type: 'test'
+  ...
+# Subtest: client advanced operations expose investors, debts and donations launchers
+ok 10 - client advanced operations expose investors, debts and donations launchers
+  ---
+  duration_ms: 0.740251
+  type: 'test'
+  ...
+# Subtest: client advanced modules provide request forms and do not expose admin workspace
+ok 11 - client advanced modules provide request forms and do not expose admin workspace
+  ---
+  duration_ms: 0.214516
+  type: 'test'
+  ...
+# Subtest: v0.6.18 client navigation is vertical with a horizontal header and three-column service cards
+ok 12 - v0.6.18 client navigation is vertical with a horizontal header and three-column service cards
+  ---
+  duration_ms: 0.676346
+  type: 'test'
+  ...
+# Subtest: client navigation keeps registration in a separate account area and hides finance/community and portal shortcuts
+ok 13 - client navigation keeps registration in a separate account area and hides finance/community and portal shortcuts
+  ---
+  duration_ms: 0.395242
+  type: 'test'
+  ...
+# Subtest: advanced operational entry links to existing customer-facing destinations
+ok 14 - advanced operational entry links to existing customer-facing destinations
+  ---
+  duration_ms: 1.057037
+  type: 'test'
+  ...
+# Subtest: client portal destinations remain available but finance/community are not linked in main navigation
+ok 15 - client portal destinations remain available but finance/community are not linked in main navigation
+  ---
+  duration_ms: 1.617893
+  type: 'test'
+  ...
+# Subtest: service worker refreshes cached shell and includes marketplace page
+ok 16 - service worker refreshes cached shell and includes marketplace page
+  ---
+  duration_ms: 0.335905
+  type: 'test'
+  ...
+# Subtest: client hub pages link back to platform and administration
+ok 17 - client hub pages link back to platform and administration
+  ---
+  duration_ms: 1.377879
+  type: 'test'
+  ...
+# Subtest: community page uses unique section and content IDs
+ok 18 - community page uses unique section and content IDs
+  ---
+  duration_ms: 0.856652
+  type: 'test'
+  ...
+# Subtest: client portals include versioned GLHApi bridge and fallback loader
+ok 19 - client portals include versioned GLHApi bridge and fallback loader
+  ---
+  duration_ms: 1.489044
+  type: 'test'
+  ...
+# Subtest: service worker cache version invalidates previous client shell
+ok 20 - service worker cache version invalidates previous client shell
+  ---
+  duration_ms: 0.374172
+  type: 'test'
+  ...
+# Subtest: client service requests are persisted with ownership and audit trail
+ok 21 - client service requests are persisted with ownership and audit trail
+  ---
+  duration_ms: 0.816853
+  type: 'test'
+  ...
+# Subtest: debt review requests verify debt ownership
+ok 22 - debt review requests verify debt ownership
+  ---
+  duration_ms: 1.108944
+  type: 'test'
+  ...
+# Subtest: admin review endpoints are role protected
+ok 23 - admin review endpoints are role protected
+  ---
+  duration_ms: 0.133086
+  type: 'test'
+  ...
+# Subtest: local compose starts both PostgreSQL and GLH web app
+ok 24 - local compose starts both PostgreSQL and GLH web app
+  ---
+  duration_ms: 0.709585
+  type: 'test'
+  ...
+# Subtest: local launch instructions warn against content URI and provide HTTP URL
+ok 25 - local launch instructions warn against content URI and provide HTTP URL
+  ---
+  duration_ms: 0.175448
+  type: 'test'
+  ...
+# Subtest: published marketplace catalogue is restricted to approved products and active stores
+ok 26 - published marketplace catalogue is restricted to approved products and active stores
+  ---
+  duration_ms: 1.677191
+  type: 'test'
+  ...
+# Subtest: customer inquiries persist and connect customer, product and merchant
+ok 27 - customer inquiries persist and connect customer, product and merchant
+  ---
+  duration_ms: 0.353141
+  type: 'test'
+  ...
+# Subtest: customer UI cannot add products and marketplace UI is present
+ok 28 - customer UI cannot add products and marketplace UI is present
+  ---
+  duration_ms: 0.282636
+  type: 'test'
+  ...
+# Subtest: merchant onboarding captures business profile requirements
+ok 29 - merchant onboarding captures business profile requirements
+  ---
+  duration_ms: 0.357767
+  type: 'test'
+  ...
+# Subtest: admin dashboard exposes database summary and inquiry supervision
+ok 30 - admin dashboard exposes database summary and inquiry supervision
+  ---
+  duration_ms: 1.03856
+  type: 'test'
+  ...
+# Subtest: permission catalogue has unique stable keys
+ok 31 - permission catalogue has unique stable keys
+  ---
+  duration_ms: 1.505187
+  type: 'test'
+  ...
+# Subtest: all default grants refer to known permissions
+ok 32 - all default grants refer to known permissions
+  ---
+  duration_ms: 0.233504
+  type: 'test'
+  ...
+# Subtest: role catalogue contains platform, operations, finance, support and compliance roles
+ok 33 - role catalogue contains platform, operations, finance, support and compliance roles
+  ---
+  duration_ms: 0.116882
+  type: 'test'
+  ...
+# Subtest: administrative hierarchy contains functional departments
+ok 34 - administrative hierarchy contains functional departments
+  ---
+  duration_ms: 0.093928
+  type: 'test'
+  ...
+# Subtest: selects active primary bank for primary-bank route
+ok 35 - selects active primary bank for primary-bank route
+  ---
+  duration_ms: 0.714182
+  type: 'test'
+  ...
+# Subtest: falls back to active primary bank when preferred provider is suspended
+ok 36 - falls back to active primary bank when preferred provider is suspended
+  ---
+  duration_ms: 0.207976
+  type: 'test'
+  ...
+# Subtest: supports explicit active provider selection
+ok 37 - supports explicit active provider selection
+  ---
+  duration_ms: 0.839496
+  type: 'test'
+  ...
+# Subtest: manual rule leaves operation unassigned
+ok 38 - manual rule leaves operation unassigned
+  ---
+  duration_ms: 0.103743
+  type: 'test'
+  ...
+# Subtest: lowest-fee route chooses lowest configured fee
+ok 39 - lowest-fee route chooses lowest configured fee
+  ---
+  duration_ms: 0.121949
+  type: 'test'
+  ...
+# Subtest: rejects explicitly requested inactive partner
+ok 40 - rejects explicitly requested inactive partner
+  ---
+  duration_ms: 0.347672
+  type: 'test'
+  ...
+# Subtest: v0.6.x Prisma schema includes merchant moderation and mini portals
+ok 41 - v0.6.x Prisma schema includes merchant moderation and mini portals
+  ---
+  duration_ms: 1.816486
+  type: 'test'
+  ...
+# Subtest: registration distinguishes clients and merchants with required merchant details
+ok 42 - registration distinguishes clients and merchants with required merchant details
+  ---
+  duration_ms: 0.161739
+  type: 'test'
+  ...
+# Subtest: merchant product creation is protected and requires approved merchant and owned store
+ok 43 - merchant product creation is protected and requires approved merchant and owned store
+  ---
+  duration_ms: 0.255075
+  type: 'test'
+  ...
+# Subtest: admin moderation, ERP, payments, providers, donations and debts routes exist
+ok 44 - admin moderation, ERP, payments, providers, donations and debts routes exist
+  ---
+  duration_ms: 0.293662
+  type: 'test'
+  ...
+# Subtest: customer and administration pages are shipped and linked
+ok 45 - customer and administration pages are shipped and linked
+  ---
+  duration_ms: 1.205315
+  type: 'test'
+  ...
+# Subtest: v0.6.12 adds persisted debt installments and collection diary models
+ok 46 - v0.6.12 adds persisted debt installments and collection diary models
+  ---
+  duration_ms: 0.720601
+  type: 'test'
+  ...
+# Subtest: v0.6.12 adds donation allocation ledger separate from receipt
+ok 47 - v0.6.12 adds donation allocation ledger separate from receipt
+  ---
+  duration_ms: 0.201066
+  type: 'test'
+  ...
+# Subtest: v0.6.12 adds investment opportunities and customer applications
+ok 48 - v0.6.12 adds investment opportunities and customer applications
+  ---
+  duration_ms: 0.12855
+  type: 'test'
+  ...
+# Subtest: investment application is authenticated and opportunity must be open
+ok 49 - investment application is authenticated and opportunity must be open
+  ---
+  duration_ms: 0.114669
+  type: 'test'
+  ...
+# Subtest: admin screens expose forms for schedule, collection, allocation and investor review
+ok 50 - admin screens expose forms for schedule, collection, allocation and investor review
+  ---
+  duration_ms: 0.238412
+  type: 'test'
+  ...
+# Subtest: v0.6.20 client service request selects active delivery companies
+ok 51 - v0.6.20 client service request selects active delivery companies
+  ---
+  duration_ms: 1.371931
+  type: 'test'
+  ...
+# Subtest: marketplace filters products by store and category
+ok 52 - marketplace filters products by store and category
+  ---
+  duration_ms: 0.192554
+  type: 'test'
+  ...
+# Subtest: merchant registration route defaults account type to merchant
+ok 53 - merchant registration route defaults account type to merchant
+  ---
+  duration_ms: 0.090363
+  type: 'test'
+  ...
+# Subtest: client ecommerce checkout reveals international transfer type and financing bank
+ok 54 - client ecommerce checkout reveals international transfer type and financing bank
+  ---
+  duration_ms: 0.17627
+  type: 'test'
+  ...
+# Subtest: financing administration configures banks and products can reference a bank
+ok 55 - financing administration configures banks and products can reference a bank
+  ---
+  duration_ms: 0.276527
+  type: 'test'
+  ...
+# Subtest: client finance request is available under services and administration sees advanced client requests
+ok 56 - client finance request is available under services and administration sees advanced client requests
+  ---
+  duration_ms: 0.134808
+  type: 'test'
+  ...
+# Subtest: v0.6.22 persists donor, manufacturer, delivery and ecommerce report modules
+ok 57 - v0.6.22 persists donor, manufacturer, delivery and ecommerce report modules
+  ---
+  duration_ms: 0.936269
+  type: 'test'
+  ...
+# Subtest: advanced operations APIs protect management and expose public active directories
+ok 58 - advanced operations APIs protect management and expose public active directories
+  ---
+  duration_ms: 0.974425
+  type: 'test'
+  ...
+# Subtest: product schema supports product image and promotional price
+ok 59 - product schema supports product image and promotional price
+  ---
+  duration_ms: 0.184702
+  type: 'test'
+  ...
+# Subtest: client and admin pages surface donor, manufacturer and delivery modules
+ok 60 - client and admin pages surface donor, manufacturer and delivery modules
+  ---
+  duration_ms: 1.40549
+  type: 'test'
+  ...
+# Subtest: v0.6.24 stores external commerce connection and delivery quote on store/order
+ok 61 - v0.6.24 stores external commerce connection and delivery quote on store/order
+  ---
+  duration_ms: 0.840518
+  type: 'test'
+  ...
+# Subtest: merchant product uploads are denied unless store permission is enabled
+ok 62 - merchant product uploads are denied unless store permission is enabled
+  ---
+  duration_ms: 1.12688
+  type: 'test'
+  ...
+# Subtest: orders calculate delivery fees server-side using active provider tariff
+ok 63 - orders calculate delivery fees server-side using active provider tariff
+  ---
+  duration_ms: 0.380731
+  type: 'test'
+  ...
+# Subtest: administration exposes store permissions and filtered department reports
+ok 64 - administration exposes store permissions and filtered department reports
+  ---
+  duration_ms: 0.441871
+  type: 'test'
+  ...
+# Subtest: public client donor and manufacturer directories remain connected to active API
+ok 65 - public client donor and manufacturer directories remain connected to active API
+  ---
+  duration_ms: 1.006712
+  type: 'test'
+  ...
+# Subtest: order creation calculates product subtotal and delivery-inclusive total on the server
+ok 66 - order creation calculates product subtotal and delivery-inclusive total on the server
+  ---
+  duration_ms: 0.822531
+  type: 'test'
+  ...
+# Subtest: order creation writes the ecommerce report in the same database transaction
+ok 67 - order creation writes the ecommerce report in the same database transaction
+  ---
+  duration_ms: 0.898533
+  type: 'test'
+  ...
+# Subtest: financing applications and delivery quotes are included in the linked report
+ok 68 - financing applications and delivery quotes are included in the linked report
+  ---
+  duration_ms: 0.178643
+  type: 'test'
+  ...
+# Subtest: department ecommerce report endpoint supports finance, delivery, date, status and currency filters
+ok 69 - department ecommerce report endpoint supports finance, delivery, date, status and currency filters
+  ---
+  duration_ms: 0.227135
+  type: 'test'
+  ...
+# Subtest: release metadata is updated to 0.6.41
+ok 70 - release metadata is updated to 0.6.41
+  ---
+  duration_ms: 0.300463
+  type: 'test'
+  ...
+# Subtest: donor and manufacturer profiles contain operational detail fields
+ok 71 - donor and manufacturer profiles contain operational detail fields
+  ---
+  duration_ms: 1.637462
+  type: 'test'
+  ...
+# Subtest: donor and manufacturer APIs support list, create, read, update, status and audit
+ok 72 - donor and manufacturer APIs support list, create, read, update, status and audit
+  ---
+  duration_ms: 0.320513
+  type: 'test'
+  ...
+# Subtest: public directories only expose active approved profiles and selected fields
+ok 73 - public directories only expose active approved profiles and selected fields
+  ---
+  duration_ms: 0.219704
+  type: 'test'
+  ...
+# Subtest: admin UI supports detailed donor and manufacturer create/edit/status workflows
+ok 74 - admin UI supports detailed donor and manufacturer create/edit/status workflows
+  ---
+  duration_ms: 0.484143
+  type: 'test'
+  ...
+# Subtest: client directories display public donor and manufacturer details
+ok 75 - client directories display public donor and manufacturer details
+  ---
+  duration_ms: 1.167429
+  type: 'test'
+  ...
+# Subtest: main advanced operations workspace links to central donor and manufacturer administration
+ok 76 - main advanced operations workspace links to central donor and manufacturer administration
+  ---
+  duration_ms: 0.929879
+  type: 'test'
+  ...
+# Subtest: donor lifecycle models and relations exist
+ok 77 - donor lifecycle models and relations exist
+  ---
+  duration_ms: 0.63761
+  type: 'test'
+  ...
+# Subtest: manufacturer catalog and inquiry models exist
+ok 78 - manufacturer catalog and inquiry models exist
+  ---
+  duration_ms: 0.132075
+  type: 'test'
+  ...
+# Subtest: donor program and application APIs are present and protected
+ok 79 - donor program and application APIs are present and protected
+  ---
+  duration_ms: 0.150451
+  type: 'test'
+  ...
+# Subtest: manufacturer product and RFQ APIs are present and protected
+ok 80 - manufacturer product and RFQ APIs are present and protected
+  ---
+  duration_ms: 0.11511
+  type: 'test'
+  ...
+# Subtest: admin UI exposes detailed donor and manufacturer workflows
+ok 81 - admin UI exposes detailed donor and manufacturer workflows
+  ---
+  duration_ms: 0.103612
+  type: 'test'
+  ...
+# Subtest: client directory includes donor opportunities and manufacturer catalog
+ok 82 - client directory includes donor opportunities and manufacturer catalog
+  ---
+  duration_ms: 0.105726
+  type: 'test'
+  ...
+# Subtest: donor and manufacturer management are grouped directly under operational administration
+ok 83 - donor and manufacturer management are grouped directly under operational administration
+  ---
+  duration_ms: 0.777565
+  type: 'test'
+  ...
+# Subtest: donor and manufacturer workspaces have visible icon navigation and sub-functions
+ok 84 - donor and manufacturer workspaces have visible icon navigation and sub-functions
+  ---
+  duration_ms: 0.883842
+  type: 'test'
+  ...
+# Subtest: operational menu routes donor and manufacturer entries to the detailed database-backed workspace
+ok 85 - operational menu routes donor and manufacturer entries to the detailed database-backed workspace
+  ---
+  duration_ms: 0.144502
+  type: 'test'
+  ...
+# Subtest: workspace displays actionable error state instead of leaving an empty loading screen
+ok 86 - workspace displays actionable error state instead of leaving an empty loading screen
+  ---
+  duration_ms: 0.157191
+  type: 'test'
+  ...
+# Subtest: server exposes donor and manufacturer CRUD, product, program and inquiry endpoints
+ok 87 - server exposes donor and manufacturer CRUD, product, program and inquiry endpoints
+  ---
+  duration_ms: 0.123592
+  type: 'test'
+  ...
+# Subtest: database schema includes donor and manufacturer workflow models
+ok 88 - database schema includes donor and manufacturer workflow models
+  ---
+  duration_ms: 0.313682
+  type: 'test'
+  ...
+# Subtest: 0.6.38 integrates operational navigation in platform administration
+ok 89 - 0.6.38 integrates operational navigation in platform administration
+  ---
+  duration_ms: 0.802953
+  type: 'test'
+  ...
+# Subtest: central operational records and client requests are PostgreSQL-backed
+ok 90 - central operational records and client requests are PostgreSQL-backed
+  ---
+  duration_ms: 0.865195
+  type: 'test'
+  ...
+# Subtest: admin operations workspace uses central API instead of localStorage
+ok 91 - admin operations workspace uses central API instead of localStorage
+  ---
+  duration_ms: 0.279742
+  type: 'test'
+  ...
+# Subtest: v0.6.5 separates liveness from PostgreSQL readiness
+ok 92 - v0.6.5 separates liveness from PostgreSQL readiness
+  ---
+  duration_ms: 0.789703
+  type: 'test'
+  ...
+# Subtest: Render readiness gate checks the database endpoint
+ok 93 - Render readiness gate checks the database endpoint
+  ---
+  duration_ms: 0.20353
+  type: 'test'
+  ...
+# Subtest: database verification script checks PostgreSQL and public schema tables
+ok 94 - database verification script checks PostgreSQL and public schema tables
+  ---
+  duration_ms: 0.866867
+  type: 'test'
+  ...
+# Subtest: admin UI exposes an actionable database readiness check
+ok 95 - admin UI exposes an actionable database readiness check
+  ---
+  duration_ms: 0.425817
+  type: 'test'
+  ...
+# Subtest: ERP organization rows expose a working detail action
+ok 96 - ERP organization rows expose a working detail action
+  ---
+  duration_ms: 0.669757
+  type: 'test'
+  ...
+# Subtest: providers navigation checks the same permission required by its API
+ok 97 - providers navigation checks the same permission required by its API
+  ---
+  duration_ms: 0.117874
+  type: 'test'
+  ...
+# Subtest: payment administration lists disabled methods and supports enable/disable
+ok 98 - payment administration lists disabled methods and supports enable/disable
+  ---
+  duration_ms: 0.109301
+  type: 'test'
+  ...
+# Subtest: global permission catalogue includes granular permissions for requested modules
+ok 99 - global permission catalogue includes granular permissions for requested modules
+  ---
+  duration_ms: 0.25776
+  type: 'test'
+  ...
+1..99
+# tests 99
+# suites 0
+# pass 99
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1279.035322
