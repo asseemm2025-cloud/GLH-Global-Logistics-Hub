@@ -1,0 +1,11 @@
+{
+  "name": "Global Logistics Hub",
+  "short_name": "GLH",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f3f6fa",
+  "theme_color": "#102c46",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [{"src":"/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
